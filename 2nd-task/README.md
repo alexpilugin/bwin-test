@@ -5,5 +5,17 @@
 5. Twitter Bootsrap was installed with ***$ npm install bootstrap --save*** command
 6. I also used [window.fetch polyfil](https://github.com/github/fetch) which was installed with ***$ npm install whatwg-fetch --save*** command
 7. Usage fetch() : import 'whatwg-fetch'
-
+8. fetch() with promises:
+~~~~ 
+  loadData(url, success) {
+    return fetch(url, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    }).then(this.checkStatus)
+      .then(this.parseJSON)
+      .then(success);
+  }
+~~~~ 
 Demo on AWS: [https://goo.gl/SQ8Mz0](https://goo.gl/SQ8Mz0)
